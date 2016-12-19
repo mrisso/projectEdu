@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Automatic">
+    <entity name="Alternativa" representedClassName=".Alternativa" syncable="YES">
+        <attribute name="alternativa" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="questao" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Questao" inverseName="alternativas" inverseEntity="Questao" syncable="YES"/>
+    </entity>
+    <entity name="Questao" representedClassName=".Questao" syncable="YES">
+        <attribute name="pergunta" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="alternativas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Alternativa" inverseName="questao" inverseEntity="Alternativa" syncable="YES"/>
+        <relationship name="tema" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tema" inverseName="questoes" inverseEntity="Tema" syncable="YES"/>
+    </entity>
+    <entity name="Tema" representedClassName=".Tema" syncable="YES">
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="questoes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Questao" inverseName="tema" inverseEntity="Questao" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Tema" positionX="187" positionY="-18" width="128" height="73"/>
+        <element name="Questao" positionX="-54" positionY="0" width="128" height="88"/>
+        <element name="Alternativa" positionX="142" positionY="-138" width="128" height="73"/>
+    </elements>
+</model>

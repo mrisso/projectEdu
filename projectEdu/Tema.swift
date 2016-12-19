@@ -21,8 +21,8 @@ class Tema: NSManagedObject {
         self.init(entity: entity!, insertIntoManagedObjectContext: context)
     }
     
-    func getQuestoes(fromTema: Tema) -> [Questao]
+    func getQuestoes() -> [Questao]
     {
-        return (fromTema.questoes?.allObjects as? [Questao])!
+        return (questoes?.allObjects as? [Questao])!
     }
 }

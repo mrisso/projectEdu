@@ -4,6 +4,11 @@
         <attribute name="alternativa" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="questao" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Questao" inverseName="alternativas" inverseEntity="Questao" syncable="YES"/>
     </entity>
+    <entity name="Estatistica" representedClassName=".Estatistica" syncable="YES">
+        <attribute name="dado" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="tema" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tema" inverseName="estatistica" inverseEntity="Tema" syncable="YES"/>
+        <relationship name="usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" inverseName="estatisticas" inverseEntity="Usuario" syncable="YES"/>
+    </entity>
     <entity name="Questao" representedClassName=".Questao" syncable="YES">
         <attribute name="pergunta" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="alternativas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Alternativa" inverseName="questao" inverseEntity="Alternativa" syncable="YES"/>
@@ -11,11 +16,18 @@
     </entity>
     <entity name="Tema" representedClassName=".Tema" syncable="YES">
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="estatistica" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Estatistica" inverseName="tema" inverseEntity="Estatistica" syncable="YES"/>
         <relationship name="questoes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Questao" inverseName="tema" inverseEntity="Questao" syncable="YES"/>
     </entity>
+    <entity name="Usuario" representedClassName=".Usuario" syncable="YES">
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="estatisticas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Estatistica" inverseName="usuario" inverseEntity="Estatistica" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Tema" positionX="187" positionY="-18" width="128" height="73"/>
-        <element name="Questao" positionX="-54" positionY="0" width="128" height="88"/>
         <element name="Alternativa" positionX="142" positionY="-138" width="128" height="73"/>
+        <element name="Questao" positionX="-146" positionY="-61" width="128" height="88"/>
+        <element name="Tema" positionX="187" positionY="-18" width="128" height="90"/>
+        <element name="Usuario" positionX="-126" positionY="90" width="128" height="73"/>
+        <element name="Estatistica" positionX="88" positionY="207" width="128" height="88"/>
     </elements>
 </model>

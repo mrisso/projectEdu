@@ -1,5 +1,5 @@
 //
-//  Alternativa+CoreDataProperties.swift
+//  Estatistica+CoreDataProperties.swift
 //  projectEdu
 //
 //  Created by Student on 12/20/16.
@@ -12,9 +12,10 @@
 import Foundation
 import CoreData
 
-extension Alternativa {
+extension Estatistica {
 
-    @NSManaged var alternativa: String?
-    @NSManaged var questao: Questao?
+    @NSManaged var dado: NSNumber?
+    @NSManaged var tema: Tema?
+    @NSManaged var usuario: Usuario?
 
 }

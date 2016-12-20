@@ -21,8 +21,8 @@ class Questao: NSManagedObject {
         self.init(entity: entity!, insertIntoManagedObjectContext: context)
     }
     
-    func getAlternativas() -> [Alternativa]
+    func getAlternativas() -> [Alternativa]?
     {
-        return (alternativas?.allObjects as? [Alternativa])!
+        return (alternativas?.allObjects as? [Alternativa])
     }
 }

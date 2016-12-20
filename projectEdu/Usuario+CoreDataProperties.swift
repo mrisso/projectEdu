@@ -1,5 +1,5 @@
 //
-//  Alternativa+CoreDataProperties.swift
+//  Usuario+CoreDataProperties.swift
 //  projectEdu
 //
 //  Created by Student on 12/20/16.
@@ -12,9 +12,9 @@
 import Foundation
 import CoreData
 
-extension Alternativa {
+extension Usuario {
 
-    @NSManaged var alternativa: String?
-    @NSManaged var questao: Questao?
+    @NSManaged var nome: String?
+    @NSManaged var estatisticas: NSSet?
 
 }

@@ -12,7 +12,7 @@ import UIKit
 
 class TemaDAO
 {
-    static func buscarTema(tema: String) -> Tema?
+    static func buscarTodos() -> [Tema]?
     {
         let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         
@@ -27,6 +27,13 @@ class TemaDAO
         } catch let erro as NSError {
             print(erro)
         }
+        
+        return listaTemas
+    }
+    
+    static func buscarTema(tema: String) -> Tema?
+    {
+        let listaTemas = (buscarTodos())!
         
         for tema in listaTemas {
             if tema.nome == tema{
